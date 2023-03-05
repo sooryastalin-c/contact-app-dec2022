@@ -1,0 +1,97 @@
+<div class="container ">
+    <div class="row">
+        <div class="col">
+            <!--heading-->
+            <h1>
+                <i class="fa-solid fa-pen"></i>
+                Update contact page
+            </h1>
+
+            <p style="text-align: justify;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In dicta perferendis reiciendis commodi totam
+                facilis accusamus iusto libero. Labore officiis est tempora optio recusandae dignissimos, tenetur cumque
+                eius natus mollitia! Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, minus aut? Id
+                incidunt exercitationem, cupiditate dolorum voluptatibus libero odio. Repellat ducimus veritatis,
+                officia dolore inventore illo aspernatur dignissimos vero sequi!
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<!--contact form design-->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <!--form design-->
+            <form #editContactForm="ngForm" class="border p-3">
+                <div class="mb-2">
+                    <input name="id" #id="ngModel" [(ngModel)]="contact.id" placeholder="Contact Id" type="text" class="form-control" required>
+
+                </div>
+                <div *ngIf="id.touched && id.invalid" class="text-danger mb-2">please enter valid id</div>
+     
+
+                <div class="mb-2">
+                    <input name="name" #name="ngModel" [(ngModel)]="contact.name"   placeholder="Contact name" type="text" class="form-control"required>
+
+                </div>
+                <div *ngIf="name.touched && name.invalid" class="text-danger mb-2">please enter valid id</div>
+     
+                
+                <div class="mb-2">
+                    <input name="photo" #photo="ngModel" [(ngModel)]="contact.photo" placeholder="Contact Image URL" type="text" class="form-control"required>
+
+                </div>
+                <div *ngIf="photo.touched && photo.invalid" class="text-danger mb-2">please enter valid id</div>
+                <div class="mb-2">
+                    <input name="mobile" #mobile="ngModel"  minlength="10" maxlength="10" pattern="[0-9]*" [(ngModel)]="contact.mobile" placeholder="Contact Mobile" type="text" class="form-control"required>
+
+                </div>
+                <div *ngIf="mobile.touched && mobile.invalid" class="text-danger mb-2">please enter valid  number</div>
+
+                <div class="mb-2">
+                    <input name="email" #email="ngModel" email [(ngModel)]="contact.email"  placeholder="Contact E mail" type="text" class="form-control"required>
+
+                </div>
+                <div *ngIf="email.touched && email.invalid" class="text-danger mb-2">please enter valid email</div>
+                <div class="mb-2">
+                    <input name="company" #company="ngModel" [(ngModel)]="contact.company" placeholder="Contact company" type="text" class="form-control"required>
+
+                </div>
+                <div *ngIf="company.touched && company.invalid" class="text-danger mb-2">please enter valid company</div>
+                <div class="mb-2">
+                    <input name="title" #title="ngModel" [(ngModel)]="contact.title"  placeholder="Contact Title" type="text" class="form-control"required>
+
+                </div>
+                <div *ngIf="title.touched && title.invalid" class="text-danger mb-2">please enter valid id</div>
+<!--group-->
+                <div class="mb-2">
+                    <select name="groupId" #groupId="ngModel" pattern="[0-9]" [(ngModel)]="contact.groupId" class="form-control"required>
+<option selected hidden disabled>Choose a group</option>
+<option [value]="group.id" *ngFor="let group of allGroups" >{{group.name}}</option>
+
+
+
+                    </select>
+
+
+
+                </div>
+<!----button-->
+<div class="mb-2">
+
+<input (click)="editContact(contact)" [disabled]="editContactForm.invalid" value="Update" type="button" class="btn btn-success">
+<a class="btn btn-warning ms-5" routerLink="">Close</a>
+</div>
+  </form>
+
+        </div>
+        <div class="col-md-6">
+
+            <img class="contact_image mt-5" src="https://th.bing.com/th/id/OIP.Kf-A4bhyw6NFAggbsk3cdwHaIU?w=178&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            alt="contact image">
+
+        </div>
+    </div>
+</div>

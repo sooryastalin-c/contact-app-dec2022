@@ -1,0 +1,16 @@
+contact vmanagement workflow
+1.create a new project.
+2.run project.
+3.remove all contents from appcomponent.htmlk file.
+4.configure external libraries:bootstrap,google font,font awesome in index.html 
+5.create components needed for this website
+-all contact
+-add contact
+-view contact
+-edit contact
+-navbar
+-page not found
+6.set up the path for all components
+7.use selector router outlet in appcomponent.html 
+8.Design component html view
+9.create angular service for making api call
